@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ثبت نام/ورود</title>
+	<link rel="stylesheet" type="text/css" href="http://cdn.font-store.ir/ganjnameh.css">
+	<link rel="stylesheet" href="style/login-register.css">
+</head>
+<body>
+	<div class="pen-title">
+	  <h1>ورود/ثبت نام</h1>
+	</div>
+	<!-- Form Module-->
+	<div class="module form-module">
+	  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+	    <div class="tooltip">سوییچ</div>
+	  </div>
+	  <div class="form lg log">
+	    <h2>به اکانت خود وارد شوید</h2>
+	    <form>
+	      <input type="text" placeholder="نام کاربری"/>
+	      <input type="password" placeholder="رمز عبور"/>
+	      <button id='login'>ورود</button>
+	    </form>
+	  </div>
+	  <div class="form lg reg">
+	    <h2>ثبت نام کنید</h2>
+	    <form>
+	      <input type="text"  id='username' placeholder="نام کاربری"/>
+	      <input type="password"  id='password' placeholder="رمز عبور"/>
+	      <input type="email"  id='email' placeholder="آدرس ایمیل"/>
+	      <input type="tel" id='phone' placeholder="شماره تلفن"/>
+	      <button id="register">ثبت نام</button>
+	    </form>
+	  </div>
+	  <div class="form con">
+	    <h2>تایید شماره تلفن</h2>
+	    <form>
+	      <input type="text" placeholder="کد تایید"/>
+	      <button id='confirm'>تایید</button>
+	    </form>
+	  </div>
+	  <div class="cta"><a id='link' href="#">رمز عبور خود را فراموش کرده اید ؟</a></div>
+	</div>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		// Toggle Function
+		$('.toggle').click(function(){
+		  // Switches the Icon
+		  $(this).children('i').toggleClass('fa-pencil');
+		  // Switches the forms  
+		  $('.form.lg').animate({
+		    height: "toggle",
+		    'padding-top': 'toggle',
+		    'padding-bottom': 'toggle',
+		    opacity: "toggle"
+		  }, "slow");
+		});
+		$('#register').click(function(e) {
+		  $('.form.lg.reg').animate({
+		    height: "toggle",
+		    'padding-top': 'toggle',
+		    'padding-bottom': 'toggle',
+		    opacity: "toggle"
+		  }, "slow");
+		  $('.form.con').animate({
+		    height: "toggle",
+		    'padding-top': 'toggle',
+		    'padding-bottom': 'toggle',
+		    opacity: "toggle"
+		  }, "slow");
+		  e.preventDefault();
+		  $('#link').html('ارسال مجدد کد');
+		});
+		function getConfirmSms() {
+			$.ajax({
+				url: `*`,
+				method: 'POST',
+				data: {
+					'phone': $('#phone').val()
+				},
+				success: function(_resp) {
+					
+				}
+			});
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+/auth {
+
+    ; get confirm sms
+    POST / {
+        body {
+            phone: 0911....
+        }
+
+        puts auth cookie
+    }
+
+    ; confirm using sms code
+    POST /confirm {
+        body {
+            code: 123456
+        }
+
+        needs auth cookie
+    }
+}
+
+/hotel {
+
+    ; get list of hotels by city id
+    POST /city {
+        body {
+            CheckIn: "2019-09-24T01:15:57.2000672+03:30",
+            CheckOut: "2019-09-24T01:15:57.2000672+03:30",
+            NationalityId: "US",
+            CityId: 1,
+            Occupancies: null || {
+                AdultCount : 2
+                ChildCount: null || 2
+                ChildAges: [4, 9]
+            }
+        }
+        response [{
+            "FareSourceCode": "sample string 1",
+            "Offer": "sample string 2",
+            "NonRefundable": true,
+            "HotelId": 4,
+            "PaymentDeadline": "2019-09-24T01:15:57.562065+03:30",
+            "Currency": "IRR",
+            "AvailableRoom": 7,
+            "PlainTextCancellationPolicy": "sample string 8",
+            "NetRate": 4500000,
+            "Rooms": [
+                {
+                "Name": "sample string 1",
+                "AdultCount": 2,
+                "ChildCount": 3,
+                "ChildAges": [
+                    "sample string 1",
+                    "sample string 2"
+                ],
+                "MealType": "sample string 4",
+                "SharingBedding": true,
+                "Passengers": [
+                    {
+                    "FirstName": "sample string 1",
+                    "LastName": "sample string 2",
+                    "PassengerType": 3,
+                    "ChildAge": {}
+                    },
+                    {
+                    "FirstName": "sample string 1",
+                    "LastName": "sample string 2",
+                    "PassengerType": 3,
+                    "ChildAge": {}
+                    }
+                ]
+            ],
+            "CancellationPolicies": [
+                {
+                "Amount": 2400000,
+                "FromDate": "2019-09-24T01:15:57.5640633+03:30"
+                }
+            ],
+            "Remarks": [
+                "sample string 1"
+            ],
+            "Amenities": [
+                "sample string 1"
+            ]
+        }]
+    }
+
+    ; get list of hotels by hotel id
+    POST /hotelId {
+        body {
+            CheckIn: "2019-09-24T01:15:57.2000672+03:30",
+            CheckOut: "2019-09-24T01:15:57.2000672+03:30",
+            HotelId: 1,
+            Occupancies: null || {
+                AdultCount : 2
+                ChildCount: null || 2
+                ChildAges: [4, 9]
+            }
+        }
+
+        response [{
+            "FareSourceCode": "sample string 1",
+            "Offer": "sample string 2",
+            "NonRefundable": true,
+            "HotelId": 4,
+            "PaymentDeadline": "2019-09-24T01:15:57.562065+03:30",
+            "Currency": "IRR",
+            "AvailableRoom": 7,
+            "PlainTextCancellationPolicy": "sample string 8",
+            "NetRate": 4500000,
+            "Rooms": [
+                {
+                "Name": "sample string 1",
+                "AdultCount": 2,
+                "ChildCount": 3,
+                "ChildAges": [
+                    "sample string 1",
+                    "sample string 2"
+                ],
+                "MealType": "sample string 4",
+                "SharingBedding": true,
+                "Passengers": [
+                    {
+                    "FirstName": "sample string 1",
+                    "LastName": "sample string 2",
+                    "PassengerType": 3,
+                    "ChildAge": {}
+                    },
+                    {
+                    "FirstName": "sample string 1",
+                    "LastName": "sample string 2",
+                    "PassengerType": 3,
+                    "ChildAge": {}
+                    }
+                ]
+                }
+            ],
+            "CancellationPolicies": [
+                {
+                "Amount": 2400000,
+                "FromDate": "2019-09-24T01:15:57.5640633+03:30"
+                }
+            ],
+            "Remarks": [
+                "sample string 1"
+            ],
+            "Amenities": [
+                "sample string 1"
+            ]
+        }]
+    }
+
+    ; get hotel image links
+    GET /images/:hotelId {
+        response [
+            "http://..."
+        ]
+    }
+
+    ; send confirm sms to book the hotel
+    POST /book {
+        body {
+            HotelId: 4
+            phone: 0911...
+            email: "example@gmail.com"
+        }
+
+        response {}
+
+        puts auth+book cookie
+    }
+
+    ; send book confirmation code
+    POST /book/confirm {
+        body {
+            code: 123456
+        }
+        response {
+            uniqePaymentId: "1234-123456789-123"
+        }
+
+        needs auth+book cookie
+    }
+
+    ; end of reserve process (shows track id)
+    GET redirected /book/confirmed {
+        response html
+    }
+
+    ; get hotelId of reserved hotels
+    GET /booked {
+        response [{
+            hotelId: 4,
+            trackId,
+        }]
+        needs auth cookie
+    }
+
+    ; cancell a reserve, send sms code to confirm cancell
+    POST /cancell {
+        body {
+            phone: 0911...
+        }
+        
+        puts auth+cancell cookie
+    }
+
+    POST /cancell/confirm {
+        body {
+            code: 123456
+        }
+        
+        response {
+            uniqePaymentId: "1234-123456789-123"
+        }
+
+        needs auth+cancell cookie
+    }
+}
+
+/payment {
+    ; payment process start page (wallet or paypal or ...)
+    GET redirected /payment/:uniqePaymentId {
+        response html
+    }
+}

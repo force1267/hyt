@@ -1,0 +1,157 @@
+
+ * {
+     padding: 0px;
+     margin: 0px;
+     outline: 0;
+}
+
+*:hover, *:focus {
+    outline: none;
+}
+
+ body, input {
+     font-family: 'ganjnameh', 'Righteous' !important;
+     direction: rtl;
+}
+ html, body {
+     max-width: 100%;
+     overflow-x: hidden;
+}
+ ul {
+     margin-bottom: 0 !important;
+}
+ li {
+     list-style: none;
+}
+ a {
+     text-decoration: none;
+}
+ .row {
+     direction: ltr;
+}
+ .clear {
+     clear: both;
+}
+
+.navbar-brand {
+     padding: 0 !important;
+     height: 100% !important;
+}
+
+.navbar {
+     border-radius: 0 !important;
+     min-height: 110px !important;
+     margin: 0 !important;
+     border: 0 !important;
+}
+
+.nav-link {
+    font-size: 17px;
+    border-radius: 17px;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+}
+
+.logo {
+     width: 100px;
+}
+
+.brand {
+    font-family: Righteous;
+    font-size: 28px;
+    position: relative;
+    top: 8px;
+}
+
+.nav-link i {
+     position: relative;
+     left: 5px;
+     top: 7px;    
+     font-size: 21px;
+}
+
+.nav-link.logreg {
+     border: 1px dashed #31ba36;
+     color: #31ba36 !important;
+     font-weight: bold;
+}
+
+.nav-link.garn {
+    color: #80DEEA!important;
+}
+
+.menu .nav-link:not(.dif):hover {
+         background: #555 !important;
+}
+
+.collapse.in{
+    display:block !important;
+    float: left;
+    width: 100%;
+}
+
+.menu .nav-item {
+    transition-duration: 0.4s !important;
+}
+
+.navbar-toggler {
+    position: absolute;
+    right: 20px !important;
+    top: 30px  !important;
+    font-size: 22px  !important;
+    border-radius: 100%  !important;
+    background: #e74c3c  !important;
+    padding: 10px  !important;
+}
+
+@media screen and (max-width: 768px) {
+     .logo {
+        position: absolute;
+        left: 0px;
+        top: 3px;
+    }
+    .navbar-collapse {
+        position: relative;
+        /* top: 90px; */
+    }
+}
+
+@media screen and (max-width: 768px) {
+     .nav-tabs>.nav-item>.nav-link i {
+        display: none;
+    }
+    .plc {
+        display: block !important;
+    }
+}
+
+.artif {
+
+}
+
+.artif .garn {position: absolute;right: 90px !important;top: 30px !important;font-size: 22px !important;border-radius: 100% !important;background: #00B0FF!important;width: 55px;height: 55px;line-height: 44px;}
+
+
+.artif .logreg {
+    position: absolute;
+    right: 160px !important;
+    top: 30px !important;
+    font-size: 22px !important;
+    border-radius: 100% !important;
+    background: #00E676!important;
+    width: 55px;
+    height: 55px;
+    line-height: 44px;
+}
+
+.artif .garn i {
+    color: #fff;
+    position: relative;
+    left: 3px;
+}
+
+.artif .logreg i {
+    color: #fff;
+    position: relative;
+    left: 3px;
+}

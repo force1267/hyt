@@ -1,0 +1,945 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hayatemun</title>
+    <!-- HEADER PART CSS -->
+    <link rel="stylesheet" type="text/css" href="style/header.css">
+    <link rel="stylesheet" type="text/css" href="style/footer.css">
+    <link rel="stylesheet" type="text/css" href="style/extensions.css">
+    <link rel="stylesheet" type="text/css" href="style/plane.css">
+    <link rel="stylesheet" type="text/css" href="style/result.css">
+    <link rel="stylesheet" type="text/css" href="style/persian-datepicker.css">
+    <!-- FAV ICON -->
+    <link rel="icon" href="assets/images/logo.png" type="image/gif" sizes="16x16">
+    <!-- PERSIAN GANJNAMEH FONT CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.font-store.ir/ganjnameh.css">
+    <!-- MATERIAL ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <!-- META TAGS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <!-- NAVBAR-->
+    <nav class="navbar menu navbar-expand-md py-3 navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <!-- Logo Image -->
+                <img src="assets/images/logo.png" width="45" alt="" class="d-inline-block logo align-middle mr-2">
+                <img src="assets/images/logo.png" width="45" alt="" style="width: 100px;height: 100px;visibility: hidden;display: none;" class=" plc align-middle mr-2">
+                <!-- Logo Text -->
+                <span class="text-uppercase font-weight-bold brand d-none d-lg-inline">Hayatemun</span>
+                <ul class='artif'>
+                    <li class="nav-item">
+                    	<a href="#" class="nav-link garn dif d-inline d-md-none"><i class="material-icons">headset_mic</i></a>
+                    </li>
+                    <li class="nav-item">
+                    	<a href="#" class="nav-link logreg dif d-inline d-md-none"><i class="material-icons">person</i></a>
+                    </li>
+                </ul>
+            </a>
+            <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="material-icons">airplanemode_active</i>پرواز داخلی</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="material-icons">public</i>پرواز خارجی</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link"><i class="material-icons">hotel</i>هتل</a></li>
+                    <li class="nav-item"><a style="color: #888;" href="#" class="nav-link"><i class="material-icons">amp_stories</i>آگهی</a></li>
+                    <li class="nav-item d-none d-sm-inline"><a href="#" class="nav-link garn dif"><i class="material-icons">headset_mic</i>پشتیبانی</a></li>
+                    <li class="nav-item d-none d-sm-inline"><a href="#" class="nav-link logreg dif"><i class="material-icons">person</i>ورود - ثبت نام</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="landing">
+        <img src="assets/images/hotel2.jpg" alt="" class="back-ground">
+        <div class="row">
+            <div class="col-md-9 ml-auto col-xl-9 mr-auto">
+                <p class="category d-none d-lg-block d-md-block">خرید بلیط هواپیما و رزرو هتل</p>
+                <!-- Nav tabs -->
+                <div class="card">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs justify-content-center" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#int_flight" role="tab">
+                                    <i class="material-icons">airplanemode_active</i>پرواز داخلی
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#out_flight" role="tab">
+                                    <i class="material-icons">public</i>پرواز خارجی
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#hotel" role="tab">
+                                    <i style="top: 7px;" class="material-icons">hotel</i>هتل
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#adv" role="tab">
+                                    <i style="top: 7px;" class="material-icons">amp_stories</i>آگهی
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <!-- Tab panes -->
+                        <div class="tab-content text-center">
+                            <div class="tab-pane active" id="int_flight" role="tabpanel">
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> یک طرفه
+                                </label>
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> رفت و برگشت
+                                </label>
+                                <div class="clear"></div>
+                                <div class="row" style="direction: rtl;">
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="select">
+                                            <span class="placeholder">مبدا</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <input type="text" id="datepickerfrom" class="dp" placeholder="تاریخ رفت" />
+                                        <i class="material-icons">date_range</i>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <input type="text" id="datepickerto" class="dp" placeholder="تاریخ برگشت" />
+                                        <i class="material-icons">date_range</i>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <div class="select">
+                                            <span class="placeholder">تعداد مسافران</span>
+                                            <ul class="gp">
+                                                <span>
+                                                    <label>تعداد بزرگسال</label>
+                              						<input value="0" min="0" max="9" type="number"/>
+                                                </span>
+                                                <hr>
+                                                <div class="clear"></div>
+                                                <span>
+                                                    <label>کودک (2 تا 12 سال)</label>
+                                                    <input value="0" min="0" max="9" type="number"/>
+                                                </span>
+                                                <hr>
+                                                <div class="clear"></div>
+                                                <span>
+                                                    <label>نوزاد (0 تا 2 سال)</label>
+                                                    <input value="0" min="0" max="9" type="number"/>
+                                                </span>
+                                                <div class="clear"></div>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-6 col-xs-12">
+                                        <button class="search">جستوجو...</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="out_flight" role="tabpanel">
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> یک طرفهه
+                                </label>
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> رفت و برگشت
+                                </label>
+                                <div class="clear"></div>
+                                <div class="row" style="direction: rtl;">
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مبدا</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <button class="search">جستوجو...</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="hotel" role="tabpanel">
+
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> یک طرفهه
+                                </label>
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> رفت و برگشت
+                                </label>
+                                <div class="clear"></div>
+                                <div class="row" style="direction: rtl;">
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مبدا</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <button class="search">جستوجو...</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="adv" role="tabpanel">
+
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> یک طرفهه
+                                </label>
+                                <label class="form-radiolabel">
+                                    <input type="radio" class="form-radio" required="" name="cf-quote" value="0">
+                                    <span class="form-radio-styler" aria-hidden="true"></span> رفت و برگشت
+                                </label>
+                                <div class="clear"></div>
+                                <div class="row" style="direction: rtl;">
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مبدا</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <div class="select">
+                                            <span class="placeholder">مقصد</span>
+                                            <ul>
+                                                <li data-value="es">تهران</li>
+                                                <li data-value="en">مازندران</li>
+                                                <li data-value="fr">اصفهان</li>
+                                                <li data-value="de">استانبول</li>
+                                            </ul>
+                                            <input type="hidden" name="changeme" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-6">
+                                        <button class="search">جستوجو...</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col-md-12 col-lg-3 filter">
+            <div class="title" style="padding-top: 0">زمان حرکت پرواز</div>
+            <div class="time-range">
+                <span>0-6</span>
+                <span>6-12</span>
+                <span>12-18</span>
+                <span>18-24</span>
+                <div class="clear"></div>
+            </div>
+            <div class="title">نوع پرواز</div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        سیستمی
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div class="title">ایرلاین ها</div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        زاگرس
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        زاگرس
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        زاگرس
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        زاگرس
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        زاگرس
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div class="title">کلاس پروازی</div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        اکونومی
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        بیزنس
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                    <span class="range">از 1,711,400 تومان</span>
+                </label>
+            </div>
+            <div class="title"></div>
+            <div>
+                <label class="control control--checkbox">
+                    <span class="yt">
+                        نمایش موارد تکراری
+                    </span>
+                    <input type="checkbox" />
+                    <div class="control__indicator"></div>
+                </label>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-9 planes">
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="column col-md-6 col-sm-12">
+                <!-- Post-->
+                <div class="post-module">
+                    <!-- Thumbnail-->
+                    <div class="thumbnailx">
+                        <span class="sys">سیستمی</span>
+                        <div class="date">
+                            <img src="https://flightio.com/Uploads/Airlines/Logo/ZV.png" alt="">
+                            <span class="co">زاگرس</span>
+                        </div>
+                    </div>
+                    <!-- Post Content-->
+                    <div class="post-content">
+                        <div class="title">
+                            <span class="from-d">08:15</span>
+                            <span class="from-w">تهران</span>
+                            <span class="line"></span>
+                            <span class="glyphicon glyphicon-chevron-left arrowx"></span>
+                            <span class="to-d">09:35</span>
+                            <span class="to-w">مشهد</span>
+                        </div>
+                        <h2 class="sub_title">858,700 تومان<span class="fhm">(برای 5 نفر)</span></h2>
+                       <p class="description">New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.New York, the largest city in the U.S., is an architectural marvel with plenty of historic monuments, magnificent buildings and countless dazzling skyscrapers.</p>
+                        <div class="post-meta"><span class="timestamp">Economy P /شماره پرواز: I35619</span></div>
+                        <div class="details-t">جزئیات <span class="glyphicon glyphicon-chevron-down"></span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <section class="nb-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-single">
+                            <!-- 	<img src="images/logo.png" class="img-responsive" alt="Logo"> -->
+
+                            <!-- This is only for better view of theme if you want your image logo remove div dummy-logo bellow and replace your logo in logo.png and uncomment logo tag above-->
+                            <div class="dummy-logo">
+                                <div class="icon pull-left brand">
+                                    <img src="assets/images/logo.png" width="45" alt="" class="d-inline-block logo align-middle mr-2">
+                                </div>
+                                <h2 style="font-family: Righteous;">Hayatemun</h2>
+                                <p>درباره ما بخوانید</p>
+                            </div>
+
+                            <p>رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از رم ایپسوم متن ساختگی با تولید سادگی نامفهوم از </p>
+                            <a href="" class="btn btn-footer">بیشتر بخوانید</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6" style="text-align: right;">
+                        <div class="footer-single useful-links">
+                            <div class="footer-title">
+                                <h2>لینک ها</h2></div>
+                            <ul class="list-unstyled">
+                                <li><a href="index.html">پرواز داخلی<i class="fa fa-angle-left pull-left"></i></a></li>
+                                <li><a href="about1.html">پرواز خارجی<i class="fa fa-angle-left pull-left"></i></a></li>
+                                <li><a href="service1.html">هتل<i class="fa fa-angle-left pull-left"></i></a></li>
+                                <li><a href="portfolio1.html">آگهی<i class="fa fa-angle-left pull-left"></i></a></li>
+                                <li><a href="pricing.html">بلاگ<i class="fa fa-angle-left pull-left"></i></a></li>
+                                <li><a href="contact1.html">ورود - ثبت نام<i class="fa fa-angle-left pull-left"></i></a></li>
+                        </div>
+                    </div>
+                    <div class="clearfix visible-sm"></div>
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <div class="col-sm-12 left-clear right-clear footer-single footer-project">
+                            <div class="footer-title">
+                                <h2>نمادهاو صلاحیت ها</h2></div>
+                            <div class="col-xs-4">
+                                <img src="assets/images/enamad.png" class="img-responsive center-block">
+                            </div>
+                            <div class="col-xs-4">
+                                <img src="assets/images/enamad.png" class="img-responsive center-block">
+                            </div>
+                            <div class="col-xs-4">
+                                <img src="assets/images/enamad.png" class="img-responsive center-block">
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-xs-4">
+                                <img src="assets/images/enamad.png" class="img-responsive center-block">
+                            </div>
+                            <div class="col-xs-4">
+                                <img src="assets/images/enamad.png" class="img-responsive center-block">
+                            </div>
+                            <div class="col-xs-4">
+                                <img src="assets/images/enamad.png" class="img-responsive center-block">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-single">
+                            <div class="footer-title">
+                                <h2>ارتباط با ما</h2></div>
+                            <address>
+				999, Holly Eiusmod Tempor, City<br>
+				Your State, Country <br>
+				<i class="fa fa-phone"></i>  987 654 3210 <br>
+				<i class="fa fa-fax"></i> 012 123 2345<br>
+				<i class="fa fa-envelope"></i> info@example.com<br>
+			</address>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="nb-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 copyrt xs-center">
+                        2019 © All Rights Reserved For <a href="/">Hayatemun</a>
+                    </div>
+                    <div class="col-sm-6 text-right xs-center">
+                        <ul class="list-inline footer-social">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-skype"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script type="text/javascript" src="script/main.js"></script>
+    <script type="text/javascript" src="script/persian-datepicker.js"></script>
+    <script>
+        $('#datepickerfrom').datepicker({
+            onSelect: function(dateText, inst) {
+                $('#datepickerto').datepicker('option', 'minDate', new JalaliDate(inst['selectedYear'], inst['selectedMonth'], inst['selectedDay']));
+            }
+        });
+        $('#datepickerto').datepicker();
+        $('.details-t').click(function() {
+            if ($(this).parent().parent().hasClass('open')) {
+                $(this).parent().parent().removeClass('open');
+                $(this).find('span').addClass('glyphicon-chevron-down');
+                $(this).find('span').removeClass('glyphicon-chevron-up');
+                $(this).parent().parent().css({
+                    height: "270px",
+                });  
+            } else {
+                $('.post-module').each(function() {
+                    $(this).css({
+                        height: "270px",
+                    });  
+                    $(this).find('.details-t').find('span').addClass('glyphicon-chevron-down');
+                    $(this).find('.details-t').find('span').removeClass('glyphicon-chevron-up');
+                    $(this).removeClass('open');
+                })
+                $(this).parent().parent().addClass('open');
+                $(this).find('span').addClass('glyphicon-chevron-up');
+                $(this).find('span').removeClass('glyphicon-chevron-down');
+                $(this).parent().parent().css({
+                    height: "570px",
+                });  
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "h3",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-session": "^1.3.3",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "sqlite3": "^4.1.0"
+  }
+}

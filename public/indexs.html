@@ -1,0 +1,557 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Hayatemun</title>
+	<!-- HEADER PART CSS -->
+	<link rel="stylesheet" type="text/css" href="style/header.css">
+	<link rel="stylesheet" type="text/css" href="style/footer.css">
+	<link rel="stylesheet" type="text/css" href="style/hotel.css">
+	<link rel="stylesheet" type="text/css" href="style/extensions.css">
+    <!-- FAV ICON -->
+    <link rel="icon" href="assets/images/logo.png" type="image/gif" sizes="16x16">
+    <!-- PERSIAN GANJNAMEH FONT CSS -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.font-store.ir/ganjnameh.css">
+    <!-- MATERIAL ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- META TAGS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <section class="head-bar">
+        <div class="logo">
+            <img src="assets/images/logo.png">
+        </div>
+        <div class="search  d-none d-sm-block">
+            <i class="material-icons trigger">search</i>
+            <div class="search-bar">
+                <input type="text" placeholder="جست و جوی سریع" name="txt-search">
+                <i class="material-icons icon">search</i>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </section>
+	<nav style="background: #fff !important;margin-bottom: 0px !important;position: relative;z-index: 10;" class="mb-4 navbar navbar-expand-md navbar-dark bg-unique">
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-3" aria-controls="navbarSupportedContent-3" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent-3">
+	        <ul class="navbar-nav mr-auto nav-menu">
+	            <li class="nav-item">
+	                <a class="nav-link" href="#">آگهی ها <i class="material-icons">dashboard</i></a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="/Hayatemun/hotel.html">رزرو هتل<i class="material-icons">hotel</i></a>
+	            </li>
+	            <li class="nav-item">
+	                <a class="nav-link" href="/Hayatemun/plane.html">بلیط هواپیما<i class="material-icons">flight</i></a>
+	            </li>
+	        </ul>
+	        <ul class="navbar-nav mr-auto left">
+	            <li class="nav-item dropdown active">
+	                <a class="nav-link top" style="position: relative;;left: 6px;" id="navbarDropdownMenuLink-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons">phone</i>۰۲۱ - ۴۳۹۰۰۰۰۰</a>
+	            </li>
+	            <li class="nav-item dropdown active" style="box-shadow: 25px 4px 0px -23px #fff;">
+	                <a class="nav-link top" href="/Hayatemun/login-register.html" id="navbarDropdownMenuLink-3" aria-haspopup="true" aria-expanded="false"><i class="material-icons">person</i>ورود - ثبت نام</a>
+	            </li>
+	        </ul>
+	    </div>
+	</nav>
+	<section class="billboard clearfix">
+		<div class="row">
+			<div class="cartable col-md-8 offset-md-2">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="row">
+							<div class="regadv col-md-2">
+								<button>ثبت آگهی</button>
+							</div>
+							<div class="search col-md-10">
+								<input type="text" name="txt-main-search" placeholder="جست و جوی هتل ">
+								<button id='search'>جست و جو</button>
+								<i class="material-icons">room</i>
+							</div>
+							<div class="col-md-12">
+								<div class="row">
+                                	<div class="col-md-3 col-xs-6">
+										<div class="select">
+										  <span class="placeholder">حداقل متراژ</span>
+										  <ul>
+										    <li data-value="es">1</li>
+										    <li data-value="en">2</li>
+										    <li data-value="fr">3</li>
+										    <li data-value="de">3</li>
+										  </ul>
+										  <input type="hidden" name="changeme"/>
+										</div>
+									</div>
+                                	<div class="col-md-3 col-xs-6">
+										<div class="select">
+										  <span class="placeholder">حداقل متراژ</span>
+										  <ul>
+										    <li data-value="es">1</li>
+										    <li data-value="en">2</li>
+										    <li data-value="fr">3</li>
+										    <li data-value="de">3</li>
+										  </ul>
+										  <input type="hidden" name="changeme"/>
+										</div>
+									</div>
+                                	<div class="col-md-3 col-xs-6">
+										<div class="select">
+										  <span class="placeholder">حداقل متراژ</span>
+										  <ul>
+										    <li data-value="es">1</li>
+										    <li data-value="en">2</li>
+										    <li data-value="fr">3</li>
+										    <li data-value="de">3</li>
+										  </ul>
+										  <input type="hidden" name="changeme"/>
+										</div>
+									</div>
+                                	<div class="col-md-3 col-xs-6">
+										<div class="select">
+										  <span class="placeholder">حداقل متراژ</span>
+										  <ul>
+										    <li data-value="es">1</li>
+										    <li data-value="en">2</li>
+										    <li data-value="fr">3</li>
+										    <li data-value="de">3</li>
+										  </ul>
+										  <input type="hidden" name="changeme"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+	                    	<div class="col-md-12">
+								<div class="select">
+								  <span class="placeholder">کشور</span>
+								  <ul>
+								    <li data-value="es">1</li>
+								    <li data-value="en">2</li>
+								    <li data-value="fr">3</li>
+								    <li data-value="de">3</li>
+								  </ul>
+								  <input type="hidden" name="changeme"/>
+								</div>
+							</div>
+	                    	<div class="col-md-12">
+								<div class="select">
+								  <span class="placeholder">منطقه</span>
+								  <ul>
+								    <li data-value="es">1</li>
+								    <li data-value="en">2</li>
+								    <li data-value="fr">3</li>
+								    <li data-value="de">3</li>
+								  </ul>
+								  <input type="hidden" name="changeme"/>
+								</div>
+							</div>
+	                    	<div class="col-md-12">
+								<div class="select">
+								  <span class="placeholder">شهر</span>
+								  <ul>
+								    <li data-value="es">1</li>
+								    <li data-value="en">2</li>
+								    <li data-value="fr">3</li>
+								    <li data-value="de">3</li>
+								  </ul>
+								  <input type="hidden" name="changeme"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="cross-line htls">
+		<span>هتل ها</span>
+	</div>
+	<div class="container hotels">
+	    <div class="well col-lg-6 col-md-12">
+	        <div class="media">
+                <img class="media-object" src="assets/images/hotel_tn.jpg">
+	            <div class="media-body">
+	                <h4 class="media-heading">هتل سارینا</h4>
+	                <p class="text-right yc">
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star-empty"></span>
+	                </p>
+	                <p class="list-inline list-unstyled">
+	                    <span><i class="glyphicon glyphicon-map-marker"></i>کیلومتر ۲ از مرکز</span>
+	                </p>
+	                <a href='#' class="show">
+	                	نمایش
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="well col-lg-6 col-md-12">
+	        <div class="media">
+                <img class="media-object" src="assets/images/hotel_tn.jpg">
+	            <div class="media-body">
+	                <h4 class="media-heading">هتل سارینا</h4>
+	                <p class="text-right yc">
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star-empty"></span>
+	                </p>
+	                <p class="list-inline list-unstyled">
+	                    <span><i class="glyphicon glyphicon-map-marker"></i>کیلومتر ۲ از مرکز</span>
+	                </p>
+	                <a href='#' class="show">
+	                	نمایش
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="well col-lg-6 col-md-12">
+	        <div class="media">
+                <img class="media-object" src="assets/images/hotel_tn.jpg">
+	            <div class="media-body">
+	                <h4 class="media-heading">هتل سارینا</h4>
+	                <p class="text-right yc">
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star-empty"></span>
+	                </p>
+	                <p class="list-inline list-unstyled">
+	                    <span><i class="glyphicon glyphicon-map-marker"></i>کیلومتر ۲ از مرکز</span>
+	                </p>
+	                <a href='#' class="show">
+	                	نمایش
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="well col-lg-6 col-md-12">
+	        <div class="media">
+                <img class="media-object" src="assets/images/hotel_tn.jpg">
+	            <div class="media-body">
+	                <h4 class="media-heading">هتل سارینا</h4>
+	                <p class="text-right yc">
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star-empty"></span>
+	                </p>
+	                <p class="list-inline list-unstyled">
+	                    <span><i class="glyphicon glyphicon-map-marker"></i>کیلومتر ۲ از مرکز</span>
+	                </p>
+	                <a href='#' class="show">
+	                	نمایش
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="well col-lg-6 col-md-12">
+	        <div class="media">
+                <img class="media-object" src="assets/images/hotel_tn.jpg">
+	            <div class="media-body">
+	                <h4 class="media-heading">هتل سارینا</h4>
+	                <p class="text-right yc">
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star-empty"></span>
+	                </p>
+	                <p class="list-inline list-unstyled">
+	                    <span><i class="glyphicon glyphicon-map-marker"></i>کیلومتر ۲ از مرکز</span>
+	                </p>
+	                <a href='#' class="show">
+	                	نمایش
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="well col-lg-6 col-md-12">
+	        <div class="media">
+                <img class="media-object" src="assets/images/hotel_tn.jpg">
+	            <div class="media-body">
+	                <h4 class="media-heading">هتل سارینا</h4>
+	                <p class="text-right yc">
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star"></span>
+	                        <span class="glyphicon glyphicon-star-empty"></span>
+	                </p>
+	                <p class="list-inline list-unstyled">
+	                    <span><i class="glyphicon glyphicon-map-marker"></i>کیلومتر ۲ از مرکز</span>
+	                </p>
+	                <a href='#' class="show">
+	                	نمایش
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="cross-line">
+		<span>داغ ترین آگهی ها</span>
+	</div>
+<!-- 	<div class="row cart-box">
+		<div class="col-md-8 offset-md-2">
+			<div class="row">
+				<div class="col-md-4 x">
+					<div class="cart">
+						<img src="assets/images/phone.jpg" alt="phone">
+						<span>خرید گوشی سامسونگ</span>
+						<a href="#">مشاهده</a>
+					</div>
+				</div>
+				<div class="col-md-4 x">
+					<div class="cart">
+						<img src="assets/images/phone.jpg" alt="phone">
+						<span>خرید گوشی سامسونگ</span>
+						<a href="#">مشاهده</a>
+					</div>
+				</div>
+				<div class="col-md-4 x">
+					<div class="cart">
+						<img src="assets/images/phone.jpg" alt="phone">
+						<span>خرید گوشی سامسونگ</span>
+						<a href="#">مشاهده</a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 x">
+					<div class="cart">
+						<img src="assets/images/phone.jpg" alt="phone">
+						<span>خرید گوشی سامسونگ</span>
+						<a href="#">مشاهده</a>
+					</div>
+				</div>
+				<div class="col-md-4 x">
+					<div class="cart">
+						<img src="assets/images/phone.jpg" alt="phone">
+						<span>خرید گوشی سامسونگ</span>
+						<a href="#">مشاهده</a>
+					</div>
+				</div>
+				<div class="col-md-4 x">
+					<div class="cart">
+						<img src="assets/images/phone.jpg" alt="phone">
+						<span>خرید گوشی سامسونگ</span>
+						<a href="#">مشاهده</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="row cart-box">
+		<div class="col-md-8 offset-md-2">
+		   <div class="row">
+		      <div class="col-md-4">
+		         <div class="card">
+		            <img class="card-img-top" src="assets/images/phone.jpg" alt="Card image cap">
+		            <div class="card-body">
+		               <h5 class="card-title border-bottom pb-3">خرید لپتاپ جدید</h5>
+		               <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+		               <a href="#" class="btn btn-sm btn-info float-right">مشاهده<i class="fa fa-eye"></i></a>
+		            </div>
+		         </div>
+		      </div>
+		      <div class="col-md-4">
+		         <div class="card">
+		            <img class="card-img-top" src="assets/images/phone.jpg" alt="Card image cap">
+		            <div class="card-body">
+		               <h5 class="card-title border-bottom pb-3">خرید لپتاپ جدید</h5>
+		               <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+		               <a href="#" class="btn btn-sm btn-info float-right">مشاهده<i class="fa fa-eye"></i></a>
+		            </div>
+		         </div>
+		      </div>
+		      <div class="col-md-4">
+		         <div class="card">
+		            <img class="card-img-top" src="assets/images/phone.jpg" alt="Card image cap">
+		            <div class="card-body">
+		               <h5 class="card-title border-bottom pb-3">خرید لپتاپ جدید</h5>
+		               <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+		               <a href="#" class="btn btn-sm btn-info float-right">مشاهده<i class="fa fa-eye"></i></a>
+		            </div>
+		         </div>
+		      </div>
+		   </div>
+		   <div class="row">
+		      <div class="col-md-4">
+		         <div class="card">
+		            <img class="card-img-top" src="assets/images/phone.jpg" alt="Card image cap">
+		            <div class="card-body">
+		               <h5 class="card-title border-bottom pb-3">خرید لپتاپ جدید</h5>
+		               <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+		               <a href="#" class="btn btn-sm btn-info float-right">مشاهده<i class="fa fa-eye"></i></a>
+		            </div>
+		         </div>
+		      </div>
+		      <div class="col-md-4">
+		         <div class="card">
+		            <img class="card-img-top" src="assets/images/phone.jpg" alt="Card image cap">
+		            <div class="card-body">
+		               <h5 class="card-title border-bottom pb-3">خرید لپتاپ جدید</h5>
+		               <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+		               <a href="#" class="btn btn-sm btn-info float-right">مشاهده<i class="fa fa-eye"></i></a>
+		            </div>
+		         </div>
+		      </div>
+		      <div class="col-md-4">
+		         <div class="card">
+		            <img class="card-img-top" src="assets/images/phone.jpg" alt="Card image cap">
+		            <div class="card-body">
+		               <h5 class="card-title border-bottom pb-3">خرید لپتاپ جدید</h5>
+		               <p class="card-text">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+		               <a href="#" class="btn btn-sm btn-info float-right">مشاهده<i class="fa fa-eye"></i></a>
+		            </div>
+		         </div>
+		      </div>
+		   </div>
+		</div>
+	</div>
+	<footer class="footer">
+	    <div class="container bottom_border">
+	        <div class="row">
+	            <div class=" col-sm-4 col-md col-sm-4  col-12 col">
+	                <h5 class="headin5_amrc col_white_amrc pt2">ارتباط با ما</h5>
+	                <!--headin5_amrc-->
+	                <p class="mb10">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
+	                <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
+	                <p><i class="fa fa-phone"></i> +91-9999878398 </p>
+	                <p><i class="fa fa fa-envelope"></i> info@example.com </p>
+
+	            </div>
+
+	            <div class=" col-sm-4 col-md  col-6 col">
+	                <h5 class="headin5_amrc col_white_amrc pt2">لینک ها</h5>
+	                <!--headin5_amrc-->
+	                <ul class="footer_ul_amrc">
+	                    <li><a href="#">تماس با ما</a></li>
+	                    <li><a href="#">درباره ما</a></li>
+	                    <li><a href="#">بلاگ</a></li>
+	                </ul>
+	                <!--footer_ul_amrc ends here-->
+	            </div>
+
+	            <div class=" col-sm-4 col-md  col-6 col">
+	                <h5 class="headin5_amrc col_white_amrc pt2">تازه ترین آگهی ها</h5>
+	                <!--headin5_amrc-->
+	                <ul class="footer_ul_amrc">
+	                    <li><a href="#">لینک1</a></li>
+	                    <li><a href="#">لینک 2</a></li>
+	                    <li><a href="#">لینک 3</a></li>
+	                    <li><a href="#">لینک 4</a></li>
+	                    <li><a href="#">لینک 5</a></li>
+	                    <li><a href="#">لینک 6</a></li>
+	                </ul>
+	                <!--footer_ul_amrc ends here-->
+	            </div>
+
+	            <div class=" col-sm-4 col-md  col-12 col">
+	                <h5 class="headin5_amrc col_white_amrc pt2">مارا دنبال کنید</h5>
+	                <!--headin5_amrc ends here-->
+
+	                <ul class="footer_ul2_amrc">
+	                    <li><a href="#"></a>
+	                        <p>لورم ایپسوم متن ساختگی با تولید س...<a href="#">https://www.lipsum.com/</a></p>
+	                    </li>
+	                    <li><a href="#"></a>
+	                        <p>لورم ایپسوم متن ساختگی با تولید س...<a href="#">https://www.lipsum.com/</a></p>
+	                    </li>
+	                    <li><a href="#"></a>
+	                        <p>لورم ایپسوم متن ساختگی با تولید س...<a href="#">https://www.lipsum.com/</a></p>
+	                    </li>
+	                </ul>
+	                <!--footer_ul2_amrc ends here-->
+	            </div>
+	        </div>
+	    </div>
+
+	    <div class="container">
+	        <ul class="foote_bottom_ul_amrc">
+	            <li><a href="http://webenlance.com">آگهی ها</a></li>
+	            <li><a href="http://webenlance.com">بلیط های مسافرتی</a></li>
+	            <li><a href="http://webenlance.com">رزرو هتل</a></li>
+	            <li><a href="http://webenlance.com">بلاگ</a></li>
+	            <li><a href="http://webenlance.com">تماس با ما</a></li>
+	            <li><a href="http://webenlance.com">در باره ما</a></li>
+	        </ul>
+	        <!--foote_bottom_ul_amrc ends here-->
+	        <p class="text-center">Copyright @2019 | Designed With by <a href="#">Hayatemoon</a></p>
+	        <!--social_footer_ul ends here-->
+	    </div>
+	</footer>
+<script type="text/javascript" src="script/main.js"></script>
+<script type="text/javascript">
+	function getHotelListByCity() {
+		// $.ajax({
+		// 	url: `*`,
+		// 	method: 'POST',
+		// 	data: {
+	 //            CheckIn: "2019-09-24T01:15:57.2000672+03:30",
+	 //            CheckOut: "2019-09-24T01:15:57.2000672+03:30",
+	 //            NationalityId: "US",
+	 //            CityId: 1,
+	 //            Occupancies: {
+	 //                AdultCount : 2,
+	 //                ChildCount: null
+	 //                ChildAges: 2,
+	 //            }
+		// 	},
+		// 	success: function(_resp) {
+				
+		// 	}
+		// });
+	}
+	function getHotelListById(id) {
+		// $.ajax({
+		// 	url: `*`,
+		// 	method: 'POST',
+		// 	success: function(_resp) {
+				
+		// 	}
+		// });
+	}
+	function getHotelImage(id) {
+		// $.ajax({
+		// 	url: `*`,
+		// 	method: 'POST',
+		// 	data: {
+	 //            CheckIn: "2019-09-24T01:15:57.2000672+03:30",
+	 //            CheckOut: "2019-09-24T01:15:57.2000672+03:30",
+	 //            HotelId: 1,
+	 //            Occupancies: {
+	 //                AdultCount : 2
+	 //                ChildCount: null || 2
+	 //                ChildAges: [4, 9]
+	 //            }
+		// 	},
+		// 	success: function(_resp) {
+				
+		// 	}
+		// });
+	}
+	$("#search").click(function() {
+		$('.hotels').show(300);
+		$('.htls').show(300);
+		$('html,body').animate({scrollTop: $('.htls').offset().top-100},'slow');
+	});
+</script>
+</body>
+</html>
