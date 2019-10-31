@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img"/>
+    <input type="text" onchange="document.getElementById('img').setAttribute('src', '/ad/image/' + this.value + '.png')">
+    
+    <form method="post" enctype="multipart/form-data" action="/ad/add/image">
+        <input type="file" name="file">
+        <input type="text" name="ad" value="0" hidden>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
