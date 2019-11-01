@@ -60,7 +60,7 @@ app.get("/find", (req, res) => { // /find?tags=a,b,c&offset=10&number=7 -> [ad {
     res.json(rs);
 })
 
-app.get("/image", express.static("ad_images")) // /image/:image.png -> png
+app.get("/image", express.static(path.join(__dirname, `./ad_images`))); // /image/:image.png -> png
 
 app.get("/create", (req, res) => { // /create -> ad {id}
     const id = db.ads.push({}) - 1;
@@ -93,8 +93,9 @@ const upload = multer({
 app.post("/add/image", upload.single("file"), (req, res) => { // upload image, get image link id
     var { id } = req.body;
     const d = parseInt(id);
-    if(d === NaN) return res.status(400).json("id must be number")
+    if(d === NaN) return res.status(400).json("id must be number")  
     var ad = db.ads[d];
+    console.log(d, db.ads)
     if(!ad) return res.status(400).json("ad does not exist")
     ad.images = ad.images === undefined ? 0 : ad.images;
 
