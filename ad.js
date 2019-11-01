@@ -48,11 +48,14 @@ app.get("/find", (req, res) => { // /find?tags=a,b,c&offset=10&number=7 -> [ad {
     } else {
         tags = tags.split(',')
     }
+    console.log(db.ads)
     var rs = db.ads.filter(e => e.published).filter((e, i) => {
-        if(i < offset || i <= offset + number - 1) return false;
-        for(var i of e) {
-            if(!e.tags.includes(i)) {
-                return false
+        if(i < offset || i > offset + number - 1) return false;
+        for(var j in e) {
+            for(var tag of tags) {
+                if(e[j].tags && !e[j].tags.includes(tag)) {
+                    return false;
+                }
             }
         }
         return true;
