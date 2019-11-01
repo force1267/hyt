@@ -86,22 +86,34 @@ const upload = multer({
     files: 1,
     fields: 3
 });
+
+
 app.post("/add/image", upload.single("file"), (req, res) => { // upload image, get image link id
     var { id } = req.body;
     const d = parseInt(id);
-    if(d === NaN) return res.status(400).json("id must be number")
-    var ad = db.ads[d];
-    if(!ad) return res.status(400).json("ad does not exist")
-    ad.images = ad.images === undefined ? 0 : ad.images;
-
+    
     const tempPath = req.file.path;
-    const targetPath = path.join(__dirname, `./ad_images/${d}_${ad.images ++}.png`);
+    console.log('here at /add/image', id)
+    if(d === NaN) {
+        fs.unlink(tempPath, err => {});
+        return res.status(400).json("id must be number")
+    }
+    var ad = db.ads[d];
+    if(!ad) {
+        fs.unlink(tempPath, err => {});
+        return res.status(400).json("ad does not exist")
+    }
+
+    ad.images = ad.images || [];
+    var img = ad.images.push(`${d}_${ad.images.length}.png`) - 1;
+    const targetPath = path.join(__dirname, `./ad_images/${d}_${img}.png`);
+
     console.log("got image", targetPath);
 
     if(path.extname(req.file.originalname).toLowerCase() === ".png") {
         fs.rename(tempPath, targetPath, err => {
             if (err) return res.status(500).json("couldn't upload")
-            res.json(`/image/${d}_${ad.images - 1}.png`);
+            res.send(`${d}_${img}.png`);
         });
     } else {
         fs.unlink(tempPath, err => {});
@@ -111,18 +123,19 @@ app.post("/add/image", upload.single("file"), (req, res) => { // upload image, g
 })
 
 app.get("/delete/image", (req, res) => { // /delete/image?id=12&image=2
-    var { id, image } = req.fields;
+    var { id, image } = req.query;
     const d = parseInt(id);
     const img = parseInt(image);
     if(d === NaN) return res.status(400).json("id must be number")
     if(img === NaN) return res.status(400).json("image must be number")
     var ad = db.ads[d];
     if(!ad) return res.status(400).json("ad does not exist")
-    if(!ad.images || img >= ad.images) return res.status(400).json("image does not exist")
+    if(!ad.images || !ad.images[img]) return res.status(400).json("image does not exist")
 
     const targetPath = path.join(__dirname, `./ad_images/${d}_${img}.png`);
     fs.unlink(targetPath, err => {
         if (err) return res.status(500).json("couldn't delete")
+        ad.images[img] = null;
         res.status(403).json("ok");
         save();
     });
