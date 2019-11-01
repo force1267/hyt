@@ -93,7 +93,7 @@ app.post("/set/info", (req, res) => { // POST /set/info body: { id, tags: [a, b,
 
 const upload = multer({
     dest: "./ad_images",
-    fileSize: 1024 * 1024 * 4,
+    fileSize: 1024 * 1024 * 6,
     files: 1,
     fields: 3
 });
@@ -120,8 +120,8 @@ app.post("/add/image", upload.single("file"), (req, res) => { // upload image, g
     const targetPath = path.join(__dirname, `./ad_images/${d}_${img}.png`);
 
     console.log("got image", targetPath);
-
-    if(path.extname(req.file.originalname).toLowerCase() === ".png") {
+    const extn = path.extname(req.file.originalname).toLowerCase();
+    if([".png", ".jpg", "jpeg", ".bmp"].includes(extn)) {
         fs.rename(tempPath, targetPath, err => {
             if (err) return res.status(500).json("couldn't upload")
             res.send(`${d}_${img}.png`);
