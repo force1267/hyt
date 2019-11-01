@@ -60,7 +60,7 @@ app.get("/find", (req, res) => { // /find?tags=a,b,c&offset=10&number=7 -> [ad {
     res.json(rs);
 })
 
-app.get("/image", express.static(path.join(__dirname, `./ad_images`))); // /image/:image.png -> png
+app.use("/image", express.static(path.join(__dirname, `./ad_images`))) // /image/:image.png -> png
 
 app.get("/create", (req, res) => { // /create -> ad {id}
     const id = db.ads.push({}) - 1;
@@ -80,10 +80,6 @@ app.post("/set/info", (req, res) => { // POST /set/info body: { id, tags: [a, b,
 })
 
 
-
-const handleError = (err, res) => {
-    res.status(500).json("couldn't upload")
-};
 const upload = multer({
     dest: "./ad_images",
     fileSize: 1024 * 1024 * 4,
@@ -93,24 +89,23 @@ const upload = multer({
 app.post("/add/image", upload.single("file"), (req, res) => { // upload image, get image link id
     var { id } = req.body;
     const d = parseInt(id);
-    if(d === NaN) return res.status(400).json("id must be number")  
+    if(d === NaN) return res.status(400).json("id must be number")
     var ad = db.ads[d];
-    console.log(d, db.ads)
     if(!ad) return res.status(400).json("ad does not exist")
     ad.images = ad.images === undefined ? 0 : ad.images;
 
     const tempPath = req.file.path;
     const targetPath = path.join(__dirname, `./ad_images/${d}_${ad.images ++}.png`);
+    console.log("got image", targetPath);
+
     if(path.extname(req.file.originalname).toLowerCase() === ".png") {
         fs.rename(tempPath, targetPath, err => {
-            if (err) return handleError(err, res);
+            if (err) return res.status(500).json("couldn't upload")
             res.json(`/image/${d}_${ad.images - 1}.png`);
         });
     } else {
-        fs.unlink(tempPath, err => {
-            if (err) return handleError(err, res);
-            res.status(403).json("only .png files are allowed");
-        });
+        fs.unlink(tempPath, err => {});
+        res.status(403).json("only .png files are allowed");
     }
     save();
 })
@@ -127,13 +122,13 @@ app.get("/delete/image", (req, res) => { // /delete/image?id=12&image=2
 
     const targetPath = path.join(__dirname, `./ad_images/${d}_${img}.png`);
     fs.unlink(targetPath, err => {
-        if (err) return handleError(err, res);
+        if (err) return res.status(500).json("couldn't delete")
         res.status(403).json("ok");
         save();
     });
 })
 
-app.get("/publish", (req, res) => {
+app.get("/publish", (req, res) => { // /publish?id=12
     var { id } = req.query;
     const d = parseInt(id);
     if(d === NaN) return res.status(400).json("id must be number")
@@ -167,9 +162,11 @@ app.get("/me", (req, res) => { // /me?tags=a,b,c&offset=10&number=7 -> [ad {...}
     }
     var rs = db.ads.filter((e, i) => {
         if(i < offset || i > offset + number - 1) return false;
-        for(var i in e) {
-            if(e[i].tags && !e[i].tags.includes(i)) {
-                return false
+        for(var j in e) {
+            for(var tag of tags) {
+                if(e[j].tags && !e[j].tags.includes(tag)) {
+                    return false;
+                }
             }
         }
         return true;
