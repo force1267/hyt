@@ -136,7 +136,7 @@ app.get("/delete/image", (req, res) => { // /delete/image?id=12&image=2
     fs.unlink(targetPath, err => {
         if (err) return res.status(500).json("couldn't delete")
         ad.images[img] = null;
-        res.status(403).json("ok");
+        res.json("ok");
         save();
     });
 })
