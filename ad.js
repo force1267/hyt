@@ -35,12 +35,20 @@ app.get("/id", (req, res) => { // /id?id=12 -> ad {...} : "error"
     const d = parseInt(id);
     if(d === NaN) return res.status(400).json("id must be number")
     var ad = db.ads[d];
-    if(!ad || !ad.published) return res.status(400).json("ad does not exist")
+    if(!ad) return res.status(400).json("ad does not exist")
     res.json(ad)
 })
 
 app.get("/find", (req, res) => { // /find?tags=a,b,c&offset=10&number=7 -> [ad {...}]
-    var { offset, number, tags } = req.query;
+    var { id, offset, number, tags } = req.query;
+
+    const d = parseInt(id);
+    if(id !== undefined && d !== NaN) {
+        var ad = db.ads[d];
+        if(!ad || !ad.published) return res.status(400).json("ad does not exist")
+        return res.json(ad)
+    }
+
     if(offset === undefined) offset = 0;
     if(number === undefined) number = db.ads.length;
     if(tags === undefined) {
@@ -168,7 +176,15 @@ app.get("/delete", (req, res) => { // /delete?id=12 -> "ok" : "error"
 })
 
 app.get("/me", (req, res) => { // /me?tags=a,b,c&offset=10&number=7 -> [ad {...}]
-    var { offset, number, tags } = req.query;
+    var { id, offset, number, tags } = req.query;
+
+    const d = parseInt(id);
+    if(id !== undefined && d !== NaN) {
+        var ad = db.ads[d];
+        if(!ad) return res.status(400).json("ad does not exist")
+        return res.json(ad)
+    }
+
     if(offset === undefined) offset = 0;
     if(number === undefined) number = db.ads.length;
     if(tags === undefined) {
