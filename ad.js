@@ -59,11 +59,9 @@ app.get("/find", (req, res) => { // /find?tags=a,b,c&offset=10&number=7 -> [ad {
     console.log(db.ads)
     var rs = db.ads.filter(e => e.published).filter((e, i) => {
         if(i < offset || i > offset + number - 1) return false;
-        for(var j in e) {
-            for(var tag of tags) {
-                if(e[j].tags && !e[j].tags.includes(tag)) {
-                    return false;
-                }
+        for(var tag of tags) {
+            if(e.tags && !e.tags.includes(tag)) {
+                return false;
             }
         }
         return true;
@@ -128,7 +126,7 @@ app.post("/add/image", upload.single("file"), (req, res) => { // upload image, g
         });
     } else {
         fs.unlink(tempPath, err => {});
-        res.status(403).json("only .png files are allowed");
+        res.status(403).json("only image files are allowed");
     }
     save();
 })
@@ -194,11 +192,9 @@ app.get("/me", (req, res) => { // /me?tags=a,b,c&offset=10&number=7 -> [ad {...}
     }
     var rs = db.ads.filter((e, i) => {
         if(i < offset || i > offset + number - 1) return false;
-        for(var j in e) {
-            for(var tag of tags) {
-                if(e[j].tags && !e[j].tags.includes(tag)) {
-                    return false;
-                }
+        for(var tag of tags) {
+            if(e.tags && !e.tags.includes(tag)) {
+                return false;
             }
         }
         return true;
